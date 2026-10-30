@@ -1,24 +1,33 @@
 name: colab-badge-workflow
-on: [push]
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - '**/*.ipynb'
+      - '.github/workflows/colab_badge_workflow.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
 jobs:
   add-colab-badge:
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout first
-        id: checkout
-        uses: actions/checkout@v2
+      - name: Checkout
+        uses: actions/checkout@v4
       - name: Add/Update badges
-        id: badges
         uses: trsvchn/colab-badge-action@v3
         with:
           check: 'all'
           update: true
-          target_branch: main
-          target_repository: TheAIDojo/AI_4_Climate_Bootcamp
+          target_branch: ${{ github.ref_name }}
+          target_repository: ${{ github.repository }}
       - name: Commit changes
-        uses: EndBug/add-and-commit@v7
+        uses: EndBug/add-and-commit@v9
         with:
-          author_name: ${{ github.repository_owner }}
-          author_email: accounts@sabri.io
-          message: 'Added Colab Badges'
+          default_author: github_actions
+          message: 'Update Colab badges'
           add: '*.ipynb'
