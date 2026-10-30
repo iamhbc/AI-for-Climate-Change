@@ -1,14 +1,49 @@
 # AI 4 Climate Bootcamp - Module 3: Deep Learning & TensorFlow
 
-[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/TheAIDojo/AI-for-Climate-Change/HEAD)
-[![Jupyter Notebook](https://img.shields.io/badge/Launch-Jupyter%20Notebook-blue.svg)](https://nbviewer.org/github/TheAIDojo/AI-for-Climate-Change/tree/main/)
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/iamhbc/AI-for-Climate-Change/HEAD)
+[![Jupyter Notebook](https://img.shields.io/badge/Launch-Jupyter%20Notebook-blue.svg)](https://nbviewer.org/github/iamhbc/AI-for-Climate-Change/tree/main/)
 [![TensorFlow](https://img.shields.io/badge/TensorFlow-2.x-green.svg)](https://www.tensorflow.org/)
 [![Python](https://img.shields.io/badge/Python-3.x-blue.svg)](https://www.python.org/)
-[![Transformers](https://img.shields.io/badge/Transformers-2.8.0-orange)](https://huggingface.co/transformers/)
+[![Transformers](https://img.shields.io/badge/Transformers-Hugging%20Face-orange)](https://huggingface.co/transformers/)
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
 
 
 Welcome to the AI 4 Climate Bootcamp - Module 3: Deep Learning & TensorFlow! This repository contains materials to help you understand the fundamental concepts of deep learning and its practical implementation using TensorFlow.
+
+## Getting started
+
+Use the Binder badge above for a hosted session, or the Jupyter Notebook badge
+to preview notebooks without executing them. Hosted builds depend on the
+repository environment and may fail until the legacy dependencies are updated.
+
+For a local session, clone this repository and create an isolated environment:
+
+```bash
+git clone https://github.com/iamhbc/AI-for-Climate-Change.git
+cd AI-for-Climate-Change
+python -m venv .venv
+# macOS / Linux:
+source .venv/bin/activate
+# Windows PowerShell: .venv\Scripts\Activate.ps1
+python -m pip install -r requirements.txt
+jupyter notebook
+```
+
+Open a lesson from the week folders and run its cells in order. Some lessons
+download datasets or pretrained models and require an internet connection.
+
+### Environment compatibility
+
+These are historical bootcamp notebooks. `requirements.txt` is unpinned, so
+installing it selects versions available for your Python and platform; it is
+not a tested compatibility lock. Newer TensorFlow, Keras, Gradio, or Transformers
+APIs may require notebook changes.
+
+`environment.yml` records the original Python 3.7 environment, including
+macOS-specific package builds and an absolute local prefix. Treat it as a
+historical reference rather than a portable installation recipe. If a lesson
+fails, include the notebook name, failing cell, Python version, package versions,
+and traceback in an issue.
 
 ## Lessons Outline
 
@@ -52,9 +87,14 @@ In the fourth week, we learned about sequence modelling and how to build models 
 
 ### [Week 5: Advanced ML Applications](./Week%2005%20-%20Advanced%20ML%20Applications/)
 
-In the fifth week, we learned about advanced ML applications and how to build model and we covered the following topics:
+In the fifth week, we learned about advanced ML applications and how to build models. We covered the following topics:
 - Forecasting with RNNs.
 - Chatbots with Transformers.
 - Object Detection with YOLOv5.
 
 ### [Week 6: Advanced TensorFlow](./Week%2006%20-%20Advanced%20TensorFlow/)
+
+In the sixth week, we explored custom TensorFlow models and training loops:
+
+- Custom models.
+- Custom training loops.
